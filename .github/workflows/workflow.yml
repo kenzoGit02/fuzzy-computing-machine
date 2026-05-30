@@ -8,6 +8,6 @@ jobs:
   demo:
     runs-on: ubuntu-latest
 
-    stes:
+    steps:
       - name: Greetings
         run: echo "Hello, world!"
