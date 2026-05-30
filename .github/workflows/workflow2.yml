@@ -1,0 +1,20 @@
+name: Send POST Request
+
+on:
+  workflow_dispatch:  # manual trigger
+  push:
+
+jobs:
+  post_request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send POST request
+        run: |
+          curl -X POST "${{ vars.DOMAIN }}" \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.API_KEY }}" \
+          -d '{
+            "name": "Edward",
+            "message": "Hello from GitHub Actions"
+          }'
